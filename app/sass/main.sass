@@ -2,24 +2,29 @@
 @import "base"
 
 
+.container
+	max-width: 1440px
+	margin: 0 auto
+	padding: 0 15px
+
+
 .header
 	position: fixed
 	right: 0
 	left: 0
 	background-color: #ffffff
 	padding: 15px 0
-	transition: all .3s
+	transition: all .6s
 	overflow: visible
 	z-index: 1001
 
 	&--active
 		background-color: rgba(#fff, 1)
 		padding: 5px 0
-		box-shadow: 0 4px 10px rgba($text, .4)
+		box-shadow: 0 4px 10px rgba($text, .2)
 
 		.header__catalog
 			top: 68px
-
 
 	&__container
 		position: relative
@@ -27,8 +32,6 @@
 		justify-content: space-between
 		align-items: center
 
-	&__nav
-		display: none
 
 	&__toggle
 		background-color: #ffffff
@@ -59,20 +62,21 @@
 				border-top-color: transparent
 				top: 10px
 
-
 	&__catalog
 		display: none
 		position: absolute
-		top: 79px
+		top: 120px
 		left: 0
 		width: 100%
 		box-shadow: 3px 4px 21px rgba(0, 0, 0, 0.11)
 		border-radius: 5px
 		background-color: #ffffff
-		padding: 30px 0px 40px
+		padding: 30px 15px
+		transition: all .6s
 
 		&--active
 			display: block
+			top: 79px
 
 	&__article
 		display: flex
@@ -84,28 +88,31 @@
 			z-index: 1002
 
 			h4
-				padding-bottom: 35px
+				margin-bottom: 35px
 				font-size: 18px
 				font-weight: 700
 				color: $accent
-				padding-left: 60px
+				margin-left: 60px
 
 			a
 				font-size: 16px
 				color: $text
 				border: 2px solid transparent
 				padding: 0 60px
+				transition: all .6s
 
 				&:hover
 					background-color: #ffffff
 					border: 2px solid #00aeef
 					border-radius: 5px
-					transition: all .7s
-
+					
 	&__logo
+		display: flex
+		justify-content: center
 		text-transform: uppercase
 		font-family: $mon
 		line-height: 1
+		width: 32%
 
 		a
 			font-size: 42px
@@ -147,7 +154,10 @@
 						left: 65px
 
 	&__left
-		
+		width: 32%
+		display: flex
+		justify-content: flex-end
+
 		a
 			font-size: 16px
 			margin-right: 30px
@@ -165,17 +175,22 @@
 
 			span
 				position: absolute
-				top: -10px
+				top: -7px
 				left: 13px
 				background-color: #00aeef
 				border-radius: 50%
 				padding: 0 4px
 				font-size: 12px
-	
+
+	&__nav
+		display: none
+
+
 .nav
 	display: flex
 	align-items: center
 	overflow: visible
+	width: 33%
 
 	ul
 		display: flex
@@ -212,9 +227,6 @@
 					transform: scale(1)
 
 
-.main
-	overflow: hidden
-
 .hero
 	background-color: #f2f5f8
 	padding: 240px 0
@@ -243,6 +255,7 @@
 			top: 0%
 			right: 15%
 
+
 .hits
 	padding: 100px 0 180px
 
@@ -262,11 +275,13 @@
 			align-items: center
 			flex-direction: column
 			padding: 20px 0
+			transition: all .6s
 
 			a
 				color: $text
 				font-size: 20px
 				position: relative
+				transition: all .6s
 
 			div
 				position: absolute
@@ -328,6 +343,7 @@
 
 		&-drag
 			background-color: #00aeef
+
 
 .tabs
 	padding-bottom: 170px
@@ -444,6 +460,7 @@
 			&-drag
 				background-color: #00aeef
 
+
 .reviews
 	padding-bottom: 100px
 
@@ -540,6 +557,7 @@
 		margin-top: 60px
 		text-align: right
 
+
 .footer
 	background-color: #f2f5f8
 	padding: 50px 0
@@ -549,11 +567,14 @@
 		display: flex
 		justify-content: space-between
 		position: relative
-
+	
+	&__logo
+		justify-content: flex-start
 
 	&__nav
 		display: flex
 		align-items: center
+		width: 32%
 
 		li
 			margin-right: 50px
@@ -593,6 +614,7 @@
 	&__end
 		position: relative
 		padding-right: 70px
+
 		a
 			background-color: #f2f5f8
 			border: 2px solid #00aeef
@@ -603,12 +625,12 @@
 			font-weight: 700
 			color: $accent
 			text-transform: uppercase
+			transition: all .6s
 
 			&:hover,
 			&:focus
 				background-color: #00aeef
 				color: #fff
-				transition: all .6s
 
 	&__up
 		a
@@ -619,6 +641,7 @@
 			position: absolute
 			top: 6px
 			right: 0
+			transition: all .6s
 
 		span
 			border: 2px solid #000000
@@ -626,6 +649,14 @@
 			border-radius: 5px
 			width: 50px
 			height: 50px
+			transition: all .6s
+
+			&:hover,
+			&:focus
+				background: $text
+
+				&::before
+					border-bottom-color: #fff
 
 			&::before
 				content: ''
@@ -634,11 +665,13 @@
 				position: absolute
 				top: 10px
 				right: 15px
+				transition: all .6s
 
 		p
 			padding-top: 15px
 			color: #000000
 			font-size: 16px
+
 
 .about
 	padding: 120px 0 50px
@@ -679,13 +712,14 @@
 				color: #00aeef
 				margin: 50px 0
 
+
 .contacts
 	padding: 150px 0 200px
 
 	&::before
 		content: ""
 		position: absolute
-		top: 24%
+		top: 23%
 		left: 0
 		background-color: #f2f5f8
 		width: 100%
